@@ -1,6 +1,8 @@
 import mysql.connector
 from mysql.connector import Error
 
+#pip install mysql-connector-python
+
 class Database:
     def __init__(self):
         # Configurações do banco de dados
