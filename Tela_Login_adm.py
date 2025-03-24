@@ -2,7 +2,11 @@ from tkinter import *
 from tkinter import ttk
 from DataBase_adm import Database  # Certifique-se de que este módulo está correto
 from tkinter import messagebox
+import subprocess
 
+# Função para abrir a janela com os botões "Funcionário", "Produto" e "Fornecedor"
+def abrir_intersecao():
+    subprocess.Popen(["python", "interseçãoadm.py"])  # Executa o código da janela com os botões
 
 # Tela de login
 jan = Tk()
