@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import ttk
 import subprocess  # Importar o módulo subprocess
-from tkinter import messagebox
 
 # Criar nova janela para os botões
 jan_botao = Tk()
@@ -18,10 +17,10 @@ def funcionario():
     subprocess.Popen(["python", "Tela_funcionario.py"])  # Executar Tela_funcionario.py como um novo processo
 
 def produto():
-    messagebox.showinfo(title="Produto", message="Botão Produto clicado!")
+    subprocess.Popen(["python", "Tela_produto.py"])
 
 def fornecedor():
-    messagebox.showinfo(title="Fornecedor", message="Botão Fornecedor clicado!")
+    subprocess.Popen(["python", "Tela_fornecedor.py"])
 
 # Adicionar novos botões à nova janela
 FuncionarioButton = ttk.Button(jan_botao, text="Funcionário", width=15, command=funcionario)
