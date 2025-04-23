@@ -29,7 +29,6 @@ senhaLabel.place(x=1, y=155)
 senhaEntry = ttk.Entry(jan, width=30, show="*")  # Oculte a senha com "*"
 senhaEntry.place(x=55, y=155)
 
-
 # Função de login
 def Login():
     usuario = NomeEntry.get()
@@ -47,6 +46,7 @@ def Login():
 
         if VerifiyLogin:
             messagebox.showinfo(title="Info Login", message="Acesso Confirmado. Bem-vindo!")
+            abrir_intersecao()  # Chama a função para abrir a nova janela
         else:
             messagebox.showinfo(title="Info Login", message="Acesso Negado. Verifique se o cadastro está no sistema.")
 
@@ -59,7 +59,6 @@ def Login():
             cursor.close()
         if 'conn' in locals():
             conn.close()
-
 
 # Função para registrar novo usuário
 def registrar():
@@ -133,12 +132,11 @@ def registrar():
         Voltar.place_forget()
 
         # Trazer de volta os widgets de login
-        LoginButton.place(x=150,y=180)
-        RegisterButton.place(x=300,y=180)
+        LoginButton.place(x=150, y=180)
+        RegisterButton.place(x=300, y=180)
 
     Voltar = ttk.Button(jan, text="Voltar", width=15, command=VoltarLogin)
     Voltar.place(x=300, y=225)
-
 
 # Botões principais
 LoginButton = ttk.Button(jan, text="Login", width=15, command=Login)
@@ -146,4 +144,5 @@ LoginButton.place(x=150, y=180)
 
 RegisterButton = ttk.Button(jan, text="Registrar", width=15, command=registrar)
 RegisterButton.place(x=300, y=180)
+
 jan.mainloop()
